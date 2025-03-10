@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OBSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Lectures">
+    <Key>
+      <PropertyRef Name="Lecture" />
+    </Key>
+    <Property Name="Lecture" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LectureName" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Lecturer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LectureCode" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Selections">
+    <Key>
+      <PropertyRef Name="SelectionID" />
+    </Key>
+    <Property Name="SelectionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentNumber" Type="varchar" MaxLength="50" />
+    <Property Name="CourseCode" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Students">
+    <Key>
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Name="StudentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="StudentNumber" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="StudentPassword" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="OBSModelStoreContainer">
+    <EntitySet Name="Lectures" EntityType="Self.Lectures" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Selections" EntityType="Self.Selections" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
